@@ -55,11 +55,17 @@ export const LEAD_TIME_TIERS = [
   { maxDays: 90, points: 10, label: '61–90 calendar days' },
 ] as const
 
+// RFP §4.1.3 allows up to 2 business days to accept an Order. We commit to
+// far faster than that — see ACCEPT_COMMITMENT_HOURS below.
+export const RFP_MAX_ACCEPT_BUSINESS_DAYS = 2
+export const ACCEPT_COMMITMENT_HOURS = 1
+export const TYPICAL_LEAD_TIME_BUSINESS_DAYS = '1–3'
+
 export const ORDER_PROCESS_STEPS = [
-  { step: 1, title: 'Order issued', detail: 'BCSS determines quantities and delivery location(s), and issues an Order to the Contractor.' },
-  { step: 2, title: 'Contractor response window', detail: '2 business days to accept, propose changes, or decline the Order.' },
-  { step: 3, title: 'Province response window', detail: 'If changes are proposed, the Province has 2 business days to accept or reject them — silence voids the changes.' },
-  { step: 4, title: 'Fulfillment', detail: 'Once accepted, the Contractor delivers to the specified BCSS location within the Lead Time.' },
+  { step: 1, title: 'Order issued', detail: 'BCSS determines quantities and delivery location(s), and issues an Order to us.' },
+  { step: 2, title: 'Our response — within the hour', detail: `We confirm acceptance, or flag any changes, within about ${ACCEPT_COMMITMENT_HOURS} hour — well inside the ${RFP_MAX_ACCEPT_BUSINESS_DAYS}-business-day window the RFP allows.` },
+  { step: 3, title: 'Province response window', detail: `If we do propose changes, the Province has ${RFP_MAX_ACCEPT_BUSINESS_DAYS} business days to accept or reject them — silence voids the changes.` },
+  { step: 4, title: 'Fulfillment', detail: `Once accepted, we ship — typically ${TYPICAL_LEAD_TIME_BUSINESS_DAYS} business days, depending on the order — to the specified BCSS location within the Lead Time.` },
 ] as const
 
 export const WEAR_TEST_SAMPLE_UNITS = [

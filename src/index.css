@@ -1008,6 +1008,34 @@ section.block {
   color: var(--muted);
 }
 
+.session-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+.session-bar b {
+  color: var(--text);
+}
+.session-bar button {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: inherit;
+  padding: 0;
+}
+.session-bar button:hover {
+  color: var(--gold);
+}
+
 /* COVERAGE MAP */
 .map-shell {
   display: grid;

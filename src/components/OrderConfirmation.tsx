@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react'
 import type { Order } from '../types'
-import { formatDate } from '../lib/businessDays'
+import { formatDate, formatDateTime } from '../lib/businessDays'
 import { exportNodeAsJpeg, exportNodeAsPdf } from '../lib/exportSlip'
 import { buildMailto } from '../lib/mailto'
-import { RFP } from '../data/contract'
+import { RFP, ACCEPT_COMMITMENT_HOURS } from '../data/contract'
 
 export function OrderConfirmation({ order }: { order: Order }) {
   const slipRef = useRef<HTMLDivElement>(null)
@@ -29,7 +29,7 @@ export function OrderConfirmation({ order }: { order: Order }) {
       `Order ${order.orderNumber} has been generated for ${order.deliveryLocation.name}.`,
       ``,
       `Delivery location: ${order.deliveryLocation.address}, ${order.deliveryLocation.city} ${order.deliveryLocation.postal}`,
-      `Accept-by date (2 business days): ${formatDate(order.acceptByDate)}`,
+      `Confirmed by (${ACCEPT_COMMITMENT_HOURS} hour commitment): ${formatDateTime(order.acceptByDate)}`,
       `Expected delivery date: ${formatDate(order.expectedDeliveryDate)}`,
       `Total units: ${totalUnits}`,
       ``,
@@ -73,9 +73,9 @@ export function OrderConfirmation({ order }: { order: Order }) {
             <div className="slip-box">
               <h4>Order Timing</h4>
               <p>
-                Order issued: {formatDate(order.createdAt)}
+                Order issued: {formatDateTime(order.createdAt)}
                 <br />
-                Accept-by (2 business days): {formatDate(order.acceptByDate)}
+                Confirmed ({ACCEPT_COMMITMENT_HOURS}-hour commitment): {formatDateTime(order.acceptByDate)}
                 <br />
                 Expected delivery: {formatDate(order.expectedDeliveryDate)} ({order.leadTimeDays} calendar days)
               </p>

@@ -181,7 +181,7 @@ export function Commitment() {
           <div className="ph">
             <div className="wk">BY SEP 30, 2026</div>
             <div className="ttl">First Order fulfilled</div>
-            <p>The anticipated first Order accepted within 2 business days and delivered inside the proposed Lead Time — no surprises.</p>
+            <p>The anticipated first Order confirmed within the hour and delivered inside the proposed Lead Time — no surprises.</p>
             <div className="bar">
               <i style={{ width: '100%' }} />
             </div>
@@ -268,8 +268,8 @@ export function CapabilitiesTable() {
           </div>
           <div className="cell">
             <div className="ic">{ICONS.clock}</div>
-            <h4>Two-day accept, no ambiguity</h4>
-            <p>Every Order is answered inside the 2-business-day window in §4.1.3 — accepted, or with clearly flagged changes.</p>
+            <h4>Confirmed within the hour</h4>
+            <p>Every Order gets a response in about an hour — accepted, or with clearly flagged changes — well inside the 2-business-day window §4.1.3 allows.</p>
           </div>
           <div className="cell">
             <div className="ic">{ICONS.scale}</div>

@@ -42,10 +42,20 @@ export function addCalendarDays(start: Date, days: number): Date {
   return result
 }
 
+export function addHours(start: Date, hours: number): Date {
+  const result = new Date(start)
+  result.setHours(result.getHours() + hours)
+  return result
+}
+
 export function formatDate(date: Date): string {
   return date.toLocaleDateString('en-CA', {
     year: 'numeric',
     month: 'short',
     day: '2-digit',
   })
+}
+
+export function formatDateTime(date: Date): string {
+  return `${formatDate(date)}, ${date.toLocaleTimeString('en-CA', { hour: '2-digit', minute: '2-digit' })}`
 }

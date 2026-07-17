@@ -1,12 +1,14 @@
 import { useMemo, useState } from 'react'
 import { CATALOG, sizesForFit, type Fit } from '../data/catalog'
 import { DELIVERY_LOCATIONS, REGION_ORDER, locationsByRegion } from '../data/locations'
-import { LEAD_TIME_TIERS, ORDER_PROCESS_STEPS } from '../data/contract'
-import { addBusinessDays, addCalendarDays } from '../lib/businessDays'
+import { LEAD_TIME_TIERS, ORDER_PROCESS_STEPS, ACCEPT_COMMITMENT_HOURS, TYPICAL_LEAD_TIME_BUSINESS_DAYS } from '../data/contract'
+import { addCalendarDays, addHours } from '../lib/businessDays'
 import { generateOrderNumber } from '../lib/ids'
+import { getSession, logout, type Session } from '../lib/auth'
 import type { Order, OrderLine } from '../types'
 import { SecHead, Head } from './ui'
 import { OrderConfirmation } from './OrderConfirmation'
+import { LoginGate } from './LoginGate'
 
 const BADGE_ELIGIBLE = new Set(['DS-LS-NAVY', 'DS-LS-WHITE', 'DS-SS-NAVY', 'DS-SS-WHITE', 'SW-NAVY'])
 
@@ -21,11 +23,12 @@ export function OrderBuilder() {
   const [badgeTag, setBadgeTag] = useState(false)
   const [lines, setLines] = useState<OrderLine[]>([])
 
-  const [leadTimeDays, setLeadTimeDays] = useState(21)
+  const [leadTimeDays, setLeadTimeDays] = useState(3)
   const [proponentName, setProponentName] = useState('')
   const [contactName, setContactName] = useState('')
   const [contactEmail, setContactEmail] = useState('')
   const [order, setOrder] = useState<Order | null>(null)
+  const [session, setSession] = useState<Session | null>(() => getSession())
 
   const item = CATALOG.find((c) => c.sku === sku)!
   const location = DELIVERY_LOCATIONS.find((l) => l.id === locationId)!
@@ -49,7 +52,7 @@ export function OrderBuilder() {
 
   function generateOrder() {
     const issued = new Date()
-    const acceptBy = addBusinessDays(issued, 2)
+    const acceptBy = addHours(issued, ACCEPT_COMMITMENT_HOURS)
     const expectedDelivery = addCalendarDays(acceptBy, leadTimeDays)
     setOrder({
       orderNumber: generateOrderNumber(issued, orderSeq++),
@@ -71,7 +74,7 @@ export function OrderBuilder() {
         <SecHead no="05" label="Order Platform" />
         <Head
           title="A working ordering platform — not a mockup"
-          lede="This is the actual §4.1.3 Order Process: an Order is issued, the Contractor has 2 business days to accept, and the delivery date is calculated straight from the proposed Lead Time. Build one below."
+          lede={`This is the actual §4.1.3 Order Process — with our own commitment layered on top: the RFP allows up to 2 business days to accept an Order, we confirm within about ${ACCEPT_COMMITMENT_HOURS} hour, and the delivery date is calculated straight from the proposed Lead Time. Build one below.`}
         />
 
         <div className="tl-grid reveal" style={{ marginBottom: 36 }}>
@@ -87,8 +90,25 @@ export function OrderBuilder() {
           ))}
         </div>
 
-        <div className="platform-grid">
-          <div className="window reveal">
+        {!session ? (
+          <LoginGate onSuccess={(displayName) => setSession({ displayName, at: Date.now() })} />
+        ) : (
+          <>
+            <div className="session-bar">
+              <span>
+                Signed in as <b>{session.displayName}</b>
+              </span>
+              <button
+                onClick={() => {
+                  logout()
+                  setSession(null)
+                }}
+              >
+                Log out
+              </button>
+            </div>
+            <div className="platform-grid">
+          <div className="window">
             <div className="chrome">
               <span className="d" />
               <span className="d" />
@@ -211,7 +231,8 @@ export function OrderBuilder() {
                 <input type="number" min={1} max={90} value={leadTimeDays} onChange={(e) => setLeadTimeDays(Number(e.target.value))} />
               </div>
               <p className="mono" style={{ fontSize: '0.7rem', color: 'var(--dim)', marginTop: -8, marginBottom: 14 }}>
-                Scores {leadTimePoints} of 30 available Lead Time points at this value.
+                Scores {leadTimePoints} of 30 available Lead Time points at this value. Most orders ship in{' '}
+                {TYPICAL_LEAD_TIME_BUSINESS_DAYS} business days — actual Lead Time depends on order size and mix.
               </p>
 
               <div className="field-row">
@@ -258,12 +279,17 @@ export function OrderBuilder() {
               <div className="body">
                 <p style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>
                   Build an Order on the left — delivery date is calculated automatically as{' '}
-                  <span className="mono">Order issued + 2 business days (accept) + {leadTimeDays} calendar days (Lead Time)</span>, exactly per RFP §4.1.3.
+                  <span className="mono">
+                    Order issued + {ACCEPT_COMMITMENT_HOURS} hour (our accept commitment) + {leadTimeDays} calendar days (Lead Time)
+                  </span>
+                  , per RFP §4.1.3.
                 </p>
               </div>
             </div>
           )}
-        </div>
+            </div>
+          </>
+        )}
       </div>
     </section>
   )
