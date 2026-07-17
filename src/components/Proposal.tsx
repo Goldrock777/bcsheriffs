@@ -16,14 +16,14 @@ export function Hero() {
             with an ordering platform ready before the {new Date(RFP.term.anticipatedStart).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })} start date.
           </p>
           <div className="hero-actions">
-            <a href="#platform" className="btn btn-gold">
+            <a href="#order-portal" className="btn btn-gold">
               Try the order platform
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </a>
-            <a href="#specifications" className="btn btn-ghost">
-              Review specification compliance
+            <a href="#capabilities" className="btn btn-ghost">
+              Review capabilities
             </a>
           </div>
           <div className="hero-meta">
@@ -259,6 +259,10 @@ export function CapabilitiesTable() {
             ))}
           </tbody>
         </table>
+        <p className="mono" style={{ fontSize: '0.68rem', color: 'var(--dim)', marginTop: 10 }}>
+          Full line-by-line specification confirmation against Schedule 1, Annexes 1–3 (colour, fabric, sizing, design,
+          closures, pockets, cresting) is in the written Proposal — every requirement confirmed, garment by garment.
+        </p>
 
         <div className="grid c3 reveal" style={{ marginTop: 32 }}>
           <div className="cell">

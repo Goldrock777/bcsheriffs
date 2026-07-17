@@ -90,6 +90,7 @@ export function OrderBuilder() {
           ))}
         </div>
 
+        <div id="order-portal">
         {!session ? (
           <LoginGate onSuccess={(displayName) => setSession({ displayName, at: Date.now() })} />
         ) : (
@@ -290,6 +291,7 @@ export function OrderBuilder() {
             </div>
           </>
         )}
+        </div>
       </div>
     </section>
   )

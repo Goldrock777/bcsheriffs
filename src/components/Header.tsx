@@ -25,11 +25,11 @@ export function Header() {
           </div>
           <nav className="nav-links">
             <a href="#proposal">Proposal</a>
-            <a href="#specifications">Specifications</a>
+            <a href="#capabilities">Capabilities</a>
             <a href="#coverage">Coverage</a>
             <a href="#platform">Order platform</a>
             <a href="#pricing">Pricing</a>
-            <a href="#platform" className="cta">
+            <a href="#order-portal" className="cta">
               Start an order
             </a>
           </nav>

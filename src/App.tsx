@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { Header } from './components/Header'
 import { Hero, StandardsStrip, Commitment, CapabilitiesTable } from './components/Proposal'
-import { Specifications } from './components/Specifications'
 import { CoverageMap } from './components/CoverageMap'
 import { OrderBuilder } from './components/OrderBuilder'
 import { PricingSchedule } from './components/PricingSchedule'
@@ -37,7 +36,7 @@ function Footer() {
           <div className="foot-col">
             <h4>Platform</h4>
             <a href="#proposal">Proposal</a>
-            <a href="#specifications">Specifications</a>
+            <a href="#capabilities">Capabilities</a>
             <a href="#coverage">Coverage</a>
             <a href="#platform">Order platform</a>
             <a href="#pricing">Pricing</a>
@@ -76,11 +75,11 @@ function CtaSection() {
         <h2>Everything BCSS needs to see, in one place</h2>
         <p>Specifications confirmed, coverage mapped, an ordering platform that already works, and pricing that computes itself.</p>
         <div className="hero-actions">
-          <a href="#platform" className="btn btn-gold">
+          <a href="#order-portal" className="btn btn-gold">
             Try the order platform
           </a>
-          <a href="#specifications" className="btn btn-ghost">
-            Review specifications
+          <a href="#capabilities" className="btn btn-ghost">
+            Review capabilities
           </a>
         </div>
       </div>
@@ -97,7 +96,6 @@ function App() {
       <StandardsStrip />
       <Commitment />
       <CapabilitiesTable />
-      <Specifications />
       <CoverageMap />
       <OrderBuilder />
       <PricingSchedule />

@@ -2,8 +2,11 @@ import { useState, type FormEvent } from 'react'
 import { DEMO_ACCOUNT, login } from '../lib/auth'
 
 export function LoginGate({ onSuccess }: { onSuccess: (displayName: string) => void }) {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  // Pre-filled with the provisioned demo credentials — the point here is to show
+  // that ordering goes through a gated portal, not to make evaluators hunt for
+  // a password. They're free to clear the fields and try a wrong one instead.
+  const [username, setUsername] = useState<string>(DEMO_ACCOUNT.username)
+  const [password, setPassword] = useState<string>(DEMO_ACCOUNT.password)
   const [error, setError] = useState(false)
 
   function handleSubmit(e: FormEvent) {
@@ -13,12 +16,6 @@ export function LoginGate({ onSuccess }: { onSuccess: (displayName: string) => v
     } else {
       setError(true)
     }
-  }
-
-  function autofill() {
-    setUsername(DEMO_ACCOUNT.username)
-    setPassword(DEMO_ACCOUNT.password)
-    setError(false)
   }
 
   return (
@@ -52,14 +49,9 @@ export function LoginGate({ onSuccess }: { onSuccess: (displayName: string) => v
         </form>
 
         <div className="session-bar" style={{ marginTop: 16, flexDirection: 'column', alignItems: 'stretch', gap: 8 }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span className="mono" style={{ fontSize: '0.66rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-              Provisioned demo credentials
-            </span>
-            <button type="button" onClick={autofill}>
-              Autofill
-            </button>
-          </div>
+          <span className="mono" style={{ fontSize: '0.66rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+            Provisioned demo credentials (pre-filled above)
+          </span>
           <span className="mono" style={{ fontSize: '0.82rem' }}>
             <b>{DEMO_ACCOUNT.username}</b> / <b>{DEMO_ACCOUNT.password}</b>
           </span>
