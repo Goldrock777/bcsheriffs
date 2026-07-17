@@ -12,6 +12,9 @@ export interface DeliveryLocation {
   lon: number
 }
 
+// Our distribution point for freight modeling — approximate Surrey coordinates.
+export const WAREHOUSE_ORIGIN = { name: 'Surrey Warehouse', lat: 49.111, lon: -122.79 }
+
 export const REGION_COLOR: Record<Region, string> = {
   'Lower Mainland': 'var(--gold)',
   Interior: 'var(--blue)',

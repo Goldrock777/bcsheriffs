@@ -74,3 +74,16 @@ export function outlineToPoints(outline: LonLat[]): string {
     return `${x.toFixed(1)},${y.toFixed(1)}`
   }).join(' ')
 }
+
+// Great-circle distance — a straight-line lower bound, not real road distance
+// (actual driven/carrier distance to northern and coastal points, especially
+// anything served by ferry or floatplane, will be meaningfully longer).
+export function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const R = 6371
+  const toRad = (d: number) => (d * Math.PI) / 180
+  const dLat = toRad(lat2 - lat1)
+  const dLon = toRad(lon2 - lon1)
+  const a =
+    Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+}
