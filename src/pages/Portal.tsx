@@ -1,15 +1,16 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { OrderBuilder } from '../components/OrderBuilder'
+import { useRevealOnScroll } from '../lib/useRevealOnScroll'
 
-export function Header() {
+function PortalHeader() {
   return (
     <>
       <div className="util">
         <div className="wrap util-in">
           <span className="l">GOVERNMENT OF BRITISH COLUMBIA · MINISTRY OF ATTORNEY GENERAL · COURT SERVICES BRANCH</span>
           <span className="r">
-            <span>
-              OPPORTUNITY <b>232053</b>
-            </span>
+            <span>SECURE ORDERING PORTAL</span>
           </span>
         </div>
       </div>
@@ -22,21 +23,27 @@ export function Header() {
             </svg>
             <div className="nm">
               DutyLine
-              <small>BC SHERIFF SERVICE · DUTY UNIFORMS</small>
+              <small>SECURE ORDERING PORTAL</small>
             </div>
           </div>
           <nav className="nav-links">
-            <a href="#proposal">Proposal</a>
-            <a href="#capabilities">Capabilities</a>
-            <a href="#coverage">Coverage</a>
-            <a href="#pricing">Pricing</a>
-            <Link to="/portal">Order platform</Link>
-            <Link to="/portal" className="cta">
-              Start an order
-            </Link>
+            <Link to="/">← Back to Proposal</Link>
           </nav>
         </div>
       </header>
+    </>
+  )
+}
+
+export default function Portal() {
+  useRevealOnScroll()
+  useEffect(() => {
+    document.title = 'Secure Ordering Portal — DutyLine · BC Sheriff Service'
+  }, [])
+  return (
+    <>
+      <PortalHeader />
+      <OrderBuilder />
     </>
   )
 }

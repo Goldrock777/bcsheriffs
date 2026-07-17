@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { RFP, EVALUATION } from '../data/contract'
 import { SecHead, Head, Tag, ICONS } from './ui'
 
@@ -16,12 +17,12 @@ export function Hero() {
             with an ordering platform ready before the {new Date(RFP.term.anticipatedStart).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })} start date.
           </p>
           <div className="hero-actions">
-            <a href="#order-portal" className="btn btn-gold">
+            <Link to="/portal" className="btn btn-gold">
               Try the order platform
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
-            </a>
+            </Link>
             <a href="#capabilities" className="btn btn-ghost">
               Review capabilities
             </a>
