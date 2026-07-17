@@ -236,7 +236,7 @@ export function CapabilitiesTable() {
     <section className="block" id="capabilities">
       <div className="wrap">
         <SecHead no="02" label="Capabilities" />
-        <Head title="Mapped directly to the RFP & Appendix B requirements" lede="Nothing here is aspirational — every row below is either already demonstrated in this platform or is a direct, priced commitment in the Proposal." />
+        <Head title="Requirement-by-requirement" />
         <table className="tt reveal">
           <thead>
             <tr>

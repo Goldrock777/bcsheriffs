@@ -165,7 +165,7 @@ export function PricingSchedule() {
       <div className="wrap">
         <SecHead no="06" label="Pricing Schedule" />
         <Head
-          title="Appendix B, Response Guideline 7 — priced live"
+          title="Pricing, computed live"
           lede="Firm for the full 36-month initial term, per unit, CAD, inclusive of duty, freight and delivery, exclusive of tax. Quantities below are an illustrative planning split of the RFP's stated cap of up to 3,600 units/year across all three garments — not a guaranteed breakdown — edit them to model your own assumptions."
         />
 

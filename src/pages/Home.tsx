@@ -53,8 +53,8 @@ function CtaSection() {
   return (
     <section className="cta">
       <div className="wrap reveal">
-        <h2>Everything BCSS needs to see, in one place</h2>
-        <p>Specifications confirmed, coverage mapped, an ordering platform that already works, and pricing that computes itself.</p>
+        <h2>Next steps</h2>
+        <p>Sign in to the ordering platform, or revisit Capabilities, Coverage, or Pricing above.</p>
         <div className="hero-actions">
           <Link to="/portal" className="btn btn-gold">
             Try the order platform
