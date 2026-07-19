@@ -24,7 +24,7 @@ export function OrderConfirmation({ order }: { order: Order }) {
 
   const notifyHref = buildMailto({
     to: '',
-    subject: `Order Confirmation ${order.orderNumber} — RFP ${RFP.opportunityId}`,
+    subject: `Order Confirmation ${order.orderNumber} - RFP ${RFP.opportunityId}`,
     body: [
       `Order ${order.orderNumber} has been generated for ${order.deliveryLocation.name}.`,
       ``,
@@ -34,7 +34,7 @@ export function OrderConfirmation({ order }: { order: Order }) {
       `Total units: ${totalUnits}`,
       ``,
       `Lines:`,
-      ...order.lines.map((l) => `  - ${l.quantity}× ${l.item.label} — ${l.fit}, size ${l.size}${l.badgeTag ? ' + badge tag' : ''}`),
+      ...order.lines.map((l) => `  - ${l.quantity}× ${l.item.label} - ${l.fit}, size ${l.size}${l.badgeTag ? ' + badge tag' : ''}`),
     ].join('\n'),
   })
 
@@ -63,7 +63,7 @@ export function OrderConfirmation({ order }: { order: Order }) {
             <div className="slip-box">
               <h4>Ship To</h4>
               <p>
-                BC Sheriff Service — {order.deliveryLocation.name}
+                BC Sheriff Service - {order.deliveryLocation.name}
                 <br />
                 {order.deliveryLocation.address}
                 <br />
@@ -98,7 +98,7 @@ export function OrderConfirmation({ order }: { order: Order }) {
                   <td>{l.item.label}</td>
                   <td>{l.fit}</td>
                   <td>{l.size}</td>
-                  <td>{l.badgeTag ? 'Yes' : '—'}</td>
+                  <td>{l.badgeTag ? 'Yes' : '-'}</td>
                   <td style={{ textAlign: 'right' }}>{l.quantity}</td>
                 </tr>
               ))}
@@ -113,7 +113,7 @@ export function OrderConfirmation({ order }: { order: Order }) {
           </table>
 
           <div className="slip-foot">
-            <span>Warranty: {RFP.warrantyYears} year from date of acceptance · Proponent: {order.proponentName || '—'}</span>
+            <span>Warranty: {RFP.warrantyYears} year from date of acceptance · Proponent: {order.proponentName || '-'}</span>
             <span>Total units: {totalUnits}</span>
           </div>
         </div>
@@ -130,7 +130,7 @@ export function OrderConfirmation({ order }: { order: Order }) {
           </a>
         </div>
         <p className="mono" style={{ fontSize: '0.68rem', color: 'var(--dim)', marginTop: 10 }}>
-          Demonstration platform — "Notify" opens your own email client with the confirmation pre-filled; no mail server is
+          Demonstration platform - "Notify" opens your own email client with the confirmation pre-filled; no mail server is
           wired up here.
         </p>
       </div>

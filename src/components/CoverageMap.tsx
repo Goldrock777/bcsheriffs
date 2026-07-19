@@ -13,7 +13,7 @@ export function CoverageMap() {
         <SecHead no="04" label="Coverage" />
         <Head
           title="All 41 BCSS delivery locations, province-wide"
-          lede="Every location in Schedule 2, Annex 1 is pre-configured in the platform — from Fort St. John to Victoria — so an Order routes correctly the moment it's placed."
+          lede="Every location in Schedule 2, Annex 1 is pre-configured in the platform - from Fort St. John to Victoria - so an Order routes correctly the moment it's placed."
         />
 
         <div className="map-shell reveal">

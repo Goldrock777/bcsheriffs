@@ -14,7 +14,7 @@ function Footer() {
         <div className="foot-grid">
           <div className="foot-brand">
             <div className="nm">DutyLine · BC Sheriff Service</div>
-            <p>A proposal exhibit prepared in response to RFP {RFP.opportunityId} — Duty Shirts, Under Carrier Shirts and Sweaters for BC Sheriff Service.</p>
+            <p>A proposal exhibit prepared in response to RFP {RFP.opportunityId} - Duty Shirts, Under Carrier Shirts and Sweaters for BC Sheriff Service.</p>
           </div>
           <div className="foot-col">
             <h4>Platform</h4>
@@ -71,7 +71,7 @@ function CtaSection() {
 export default function Home() {
   useRevealOnScroll()
   useEffect(() => {
-    document.title = 'DutyLine — BC Sheriff Service Duty Uniform Platform | RFP 232053'
+    document.title = 'DutyLine - BC Sheriff Service Duty Uniform Platform | RFP 232053'
   }, [])
   return (
     <>

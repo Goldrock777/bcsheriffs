@@ -1,4 +1,4 @@
-// A hand-simplified, illustrative outline of British Columbia — not survey
+// A hand-simplified, illustrative outline of British Columbia - not survey
 // data. Good enough to orient 41 delivery-location pins on a proposal
 // exhibit; not suitable for anything requiring geographic accuracy.
 

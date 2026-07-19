@@ -73,8 +73,8 @@ export function OrderBuilder() {
       <div className="wrap">
         <SecHead no="05" label="Order Platform" />
         <Head
-          title="A working ordering platform — not a mockup"
-          lede={`This is the actual §4.1.3 Order Process — with our own commitment layered on top: the RFP allows up to 2 business days to accept an Order, we confirm within about ${ACCEPT_COMMITMENT_HOURS} hour, and the delivery date is calculated straight from the proposed Lead Time. Build one below.`}
+          title="A working ordering platform - not a mockup"
+          lede={`This is the actual §4.1.3 Order Process - with our own commitment layered on top: the RFP allows up to 2 business days to accept an Order, we confirm within about ${ACCEPT_COMMITMENT_HOURS} hour, and the delivery date is calculated straight from the proposed Lead Time. Build one below.`}
         />
 
         <div className="tl-grid reveal" style={{ marginBottom: 36 }}>
@@ -228,12 +228,12 @@ export function OrderBuilder() {
               )}
 
               <div className="field" style={{ marginTop: 18 }}>
-                <label>Proposed Lead Time (calendar days) — Appendix B, Response Guideline 6</label>
+                <label>Proposed Lead Time (calendar days) - Appendix B, Response Guideline 6</label>
                 <input type="number" min={1} max={90} value={leadTimeDays} onChange={(e) => setLeadTimeDays(Number(e.target.value))} />
               </div>
               <p className="mono" style={{ fontSize: '0.7rem', color: 'var(--dim)', marginTop: -8, marginBottom: 14 }}>
                 Scores {leadTimePoints} of 30 available Lead Time points at this value. Most orders ship in{' '}
-                {TYPICAL_LEAD_TIME_BUSINESS_DAYS} business days — actual Lead Time depends on order size and mix.
+                {TYPICAL_LEAD_TIME_BUSINESS_DAYS} business days - actual Lead Time depends on order size and mix.
               </p>
 
               <div className="field-row">
@@ -279,7 +279,7 @@ export function OrderBuilder() {
               </div>
               <div className="body">
                 <p style={{ color: 'var(--muted)', fontSize: '0.9rem' }}>
-                  Build an Order on the left — delivery date is calculated automatically as{' '}
+                  Build an Order on the left - delivery date is calculated automatically as{' '}
                   <span className="mono">
                     Order issued + {ACCEPT_COMMITMENT_HOURS} hour (our accept commitment) + {leadTimeDays} calendar days (Lead Time)
                   </span>

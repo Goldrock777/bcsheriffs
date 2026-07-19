@@ -1,8 +1,8 @@
-// Client-side demo gate only — there is no backend issuing, hashing, or
+// Client-side demo gate only - there is no backend issuing, hashing, or
 // verifying these credentials, and no way to revoke or rotate them
 // server-side. A production rollout would replace this with a real identity
 // provider (e.g. government SSO / IDIR) issuing individual, revocable
-// credentials — not one shared demo login baked into the client bundle.
+// credentials - not one shared demo login baked into the client bundle.
 
 const STORAGE_KEY = 'dutyline.session'
 
@@ -14,7 +14,7 @@ export interface Session {
 export const DEMO_ACCOUNT = {
   username: 'bcss.ordering',
   password: 'RFP232053-Sep2026',
-  displayName: 'BC Sheriff Service — Ordering Desk',
+  displayName: 'BC Sheriff Service - Ordering Desk',
 } as const
 
 export function login(username: string, password: string): boolean {

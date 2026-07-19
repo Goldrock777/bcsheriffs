@@ -7,7 +7,7 @@ export interface DeliveryLocation {
   city: string
   postal: string
   region: Region
-  /** Approximate coordinates for the illustrative coverage map — not survey-grade. */
+  /** Approximate coordinates for the illustrative coverage map - not survey-grade. */
   lat: number
   lon: number
 }
@@ -24,7 +24,7 @@ export const DELIVERY_LOCATIONS: DeliveryLocation[] = [
   { id: 'abbotsford', name: 'Abbotsford', address: '32375 Veterans Way', city: 'Abbotsford', postal: 'V2T 0B3', region: 'Lower Mainland', lat: 49.038, lon: -122.279 },
   { id: 'central-float', name: 'Central Float Pool', address: '651 Carnarvon Street', city: 'New Westminster', postal: 'V3M 1C9', region: 'Lower Mainland', lat: 49.202, lon: -122.911 },
   { id: 'chilliwack', name: 'Chilliwack', address: '46085 Yale Road', city: 'Chilliwack', postal: 'V2P 2L8', region: 'Lower Mainland', lat: 49.157, lon: -121.951 },
-  { id: 'coquitlam-ops', name: 'Sheriff Provincial Operations — Coquitlam', address: 'Roadside Building, 2601 Lougheed Highway', city: 'Coquitlam', postal: 'V3C 4J2', region: 'Lower Mainland', lat: 49.253, lon: -122.793 },
+  { id: 'coquitlam-ops', name: 'Sheriff Provincial Operations - Coquitlam', address: 'Roadside Building, 2601 Lougheed Highway', city: 'Coquitlam', postal: 'V3C 4J2', region: 'Lower Mainland', lat: 49.253, lon: -122.793 },
   { id: 'jibc', name: 'Justice Institute of B.C.', address: '715 McBride Blvd.', city: 'New Westminster', postal: 'V3L 5T4', region: 'Lower Mainland', lat: 49.211, lon: -122.925 },
   { id: 'new-westminster', name: 'New Westminster', address: '651 Carnarvon Street', city: 'New Westminster', postal: 'V3M 1C9', region: 'Lower Mainland', lat: 49.202, lon: -122.905 },
   { id: 'north-van', name: 'North Vancouver', address: '200 East 23rd Street', city: 'North Vancouver', postal: 'V7L 4R4', region: 'Lower Mainland', lat: 49.32, lon: -123.073 },

@@ -39,7 +39,7 @@ export function PricingSchedule() {
         <SecHead no="06" label="Pricing Schedule" />
         <Head
           title="Pricing, computed live"
-          lede="Firm for the full 36-month initial term, per unit, CAD, inclusive of duty, freight and delivery, exclusive of tax. Quantities below are an illustrative planning split of the RFP's stated cap of up to 3,600 units/year across all three garments — not a guaranteed breakdown — edit them to model your own assumptions."
+          lede="Firm for the full 36-month initial term, per unit, CAD, inclusive of duty, freight and delivery, exclusive of tax. Quantities below are an illustrative planning split of the RFP's stated cap of up to 3,600 units/year across all three garments - not a guaranteed breakdown - edit them to model your own assumptions."
         />
 
         <table className="ptable reveal">
@@ -93,7 +93,7 @@ export function PricingSchedule() {
         </table>
         <p className="mono" style={{ fontSize: '0.68rem', color: 'var(--dim)', marginTop: 10 }}>
           RFP §2.8(b): if unit pricing sums are mis-added by the Proponent, the Province takes the mathematically correct
-          total for evaluation and contracting — this schedule always computes it live, so that can't happen here.
+          total for evaluation and contracting - this schedule always computes it live, so that can't happen here.
         </p>
       </div>
     </section>

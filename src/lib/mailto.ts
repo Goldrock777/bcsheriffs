@@ -1,4 +1,4 @@
-// Client-side notification only — this exhibit has no backend or mail server.
+// Client-side notification only - this exhibit has no backend or mail server.
 // It opens the user's own email client with the confirmation pre-filled, so a
 // real notification can be sent with one click. Wiring true server-side
 // automation (e.g. on Order acceptance) is a follow-on integration once a

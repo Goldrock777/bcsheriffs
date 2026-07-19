@@ -38,7 +38,7 @@ function PortalHeader() {
 export default function Portal() {
   useRevealOnScroll()
   useEffect(() => {
-    document.title = 'Secure Ordering Portal — DutyLine · BC Sheriff Service'
+    document.title = 'Secure Ordering Portal - DutyLine · BC Sheriff Service'
   }, [])
   return (
     <>

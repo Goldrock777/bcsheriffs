@@ -9,11 +9,11 @@ export function Hero() {
         <div className="hero-copy">
           <span className="eyebrow">Response to RFP · Opportunity {RFP.opportunityId}</span>
           <h1>
-            <em>DutyLine</em> — a single-source duty uniform program for BC Sheriff Service.
+            <em>DutyLine</em> - a single-source duty uniform program for BC Sheriff Service.
           </h1>
           <p className="lede">
             Duty Shirts, Under Carrier Shirts and Sweaters for {RFP.scope.officers.toLocaleString()} sheriffs
-            across all {RFP.scope.courthouses} BCSS locations — built to the exact specifications in Schedule 1,
+            across all {RFP.scope.courthouses} BCSS locations - built to the exact specifications in Schedule 1,
             with an ordering platform ready before the {new Date(RFP.term.anticipatedStart).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })} start date.
           </p>
           <div className="hero-actions">
@@ -158,7 +158,7 @@ export function Commitment() {
           <div className="ph">
             <div className="wk">14 BUSINESS DAYS</div>
             <div className="ttl">Wear test samples delivered</div>
-            <p>Full 28-unit sample set — both fits, all six garment/colour combinations — shipped to the Coquitlam Quartermaster within the RFP's own deadline.</p>
+            <p>Full 28-unit sample set - both fits, all six garment/colour combinations - shipped to the Coquitlam Quartermaster within the RFP's own deadline.</p>
             <div className="bar">
               <i style={{ width: '100%' }} />
             </div>
@@ -166,7 +166,7 @@ export function Commitment() {
           <div className="ph">
             <div className="wk">BEFORE SEP 1</div>
             <div className="ttl">Ordering platform live</div>
-            <p>DutyLine configured with all 41 delivery locations and the exact §4.1.3 Order Process — accept/decline clock included.</p>
+            <p>DutyLine configured with all 41 delivery locations and the exact §4.1.3 Order Process - accept/decline clock included.</p>
             <div className="bar">
               <i style={{ width: '100%' }} />
             </div>
@@ -182,7 +182,7 @@ export function Commitment() {
           <div className="ph">
             <div className="wk">BY SEP 30, 2026</div>
             <div className="ttl">First Order fulfilled</div>
-            <p>The anticipated first Order confirmed within the hour and delivered inside the proposed Lead Time — no surprises.</p>
+            <p>The anticipated first Order confirmed within the hour and delivered inside the proposed Lead Time - no surprises.</p>
             <div className="bar">
               <i style={{ width: '100%' }} />
             </div>
@@ -198,12 +198,12 @@ export function CapabilitiesTable() {
     {
       req: 'Deliver to all 41 BCSS locations',
       ref: 'RFP §7.1 · Mandatory',
-      capability: 'Every delivery location in Schedule 2 – Annex 1 is pre-loaded in the ordering platform, grouped by region, with routing confirmed for each courthouse and detention/escort centre.',
+      capability: 'Every delivery location in Schedule 2 - Annex 1 is pre-loaded in the ordering platform, grouped by region, with routing confirmed for each courthouse and detention/escort centre.',
     },
     {
-      req: 'Meet required specifications — all three garments',
+      req: 'Meet required specifications - all three garments',
       ref: 'Appendix B · Response Guideline 1',
-      capability: 'Full compliance confirmed against every requirement in Schedule 1, Annexes 1–3 — colour, fabric, sizing, design, closures, pockets and cresting placement.',
+      capability: 'Full compliance confirmed against every requirement in Schedule 1, Annexes 1-3 - colour, fabric, sizing, design, closures, pockets and cresting placement.',
     },
     {
       req: 'Preferred badge number tag option',
@@ -223,7 +223,7 @@ export function CapabilitiesTable() {
     {
       req: 'Returns & 1-year warranty process',
       ref: 'Appendix B · Response Guideline 5',
-      capability: 'Single-point warranty intake built into the platform — every unit is tracked from delivery date, with a streamlined return-and-replace workflow.',
+      capability: 'Single-point warranty intake built into the platform - every unit is tracked from delivery date, with a streamlined return-and-replace workflow.',
     },
     {
       req: 'Fast, unconditional Lead Time + backorder policy',
@@ -261,25 +261,25 @@ export function CapabilitiesTable() {
           </tbody>
         </table>
         <p className="mono" style={{ fontSize: '0.68rem', color: 'var(--dim)', marginTop: 10 }}>
-          Full line-by-line specification confirmation against Schedule 1, Annexes 1–3 (colour, fabric, sizing, design,
-          closures, pockets, cresting) is in the written Proposal — every requirement confirmed, garment by garment.
+          Full line-by-line specification confirmation against Schedule 1, Annexes 1-3 (colour, fabric, sizing, design,
+          closures, pockets, cresting) is in the written Proposal - every requirement confirmed, garment by garment.
         </p>
 
         <div className="grid c3 reveal" style={{ marginTop: 32 }}>
           <div className="cell">
             <div className="ic">{ICONS.shield}</div>
             <h4>No minimum orders</h4>
-            <p>We remain flexible to BCSS's as-if-and-when-requested model — no minimum quantity or dollar value required to fulfill an Order.</p>
+            <p>We remain flexible to BCSS's as-if-and-when-requested model - no minimum quantity or dollar value required to fulfill an Order.</p>
           </div>
           <div className="cell">
             <div className="ic">{ICONS.clock}</div>
             <h4>Confirmed within the hour</h4>
-            <p>Every Order gets a response in about an hour — accepted, or with clearly flagged changes — well inside the 2-business-day window §4.1.3 allows.</p>
+            <p>Every Order gets a response in about an hour - accepted, or with clearly flagged changes - well inside the 2-business-day window §4.1.3 allows.</p>
           </div>
           <div className="cell">
             <div className="ic">{ICONS.scale}</div>
             <h4>Firm pricing, full 36 months</h4>
-            <p>Pricing quoted holds for the entire initial term as required by §4.1.2 — CAD, FOB destination, duty and freight included.</p>
+            <p>Pricing quoted holds for the entire initial term as required by §4.1.2 - CAD, FOB destination, duty and freight included.</p>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { DEMO_ACCOUNT, login } from '../lib/auth'
 
 export function LoginGate({ onSuccess }: { onSuccess: (displayName: string) => void }) {
-  // Pre-filled with the provisioned demo credentials — the point here is to show
+  // Pre-filled with the provisioned demo credentials - the point here is to show
   // that ordering goes through a gated portal, not to make evaluators hunt for
   // a password. They're free to clear the fields and try a wrong one instead.
   const [username, setUsername] = useState<string>(DEMO_ACCOUNT.username)
@@ -28,7 +28,7 @@ export function LoginGate({ onSuccess }: { onSuccess: (displayName: string) => v
       </div>
       <div className="body">
         <p style={{ color: 'var(--muted)', fontSize: '0.9rem', marginBottom: 16 }}>
-          The Order Platform sits behind sign-in, the way a real BCSS ordering desk would work — the rest of this
+          The Order Platform sits behind sign-in, the way a real BCSS ordering desk would work - the rest of this
           Proposal is open for evaluation.
         </p>
         <form onSubmit={handleSubmit}>
@@ -57,7 +57,7 @@ export function LoginGate({ onSuccess }: { onSuccess: (displayName: string) => v
           </span>
         </div>
         <p className="mono" style={{ fontSize: '0.64rem', color: 'var(--dim)', marginTop: 10 }}>
-          Demonstration gate — client-side only, no backend. Production would issue individual credentials through a
+          Demonstration gate - client-side only, no backend. Production would issue individual credentials through a
           real identity provider instead of one shared login.
         </p>
       </div>
